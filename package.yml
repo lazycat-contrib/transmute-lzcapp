@@ -1,0 +1,15 @@
+package: community.lazycat.app.transmute
+version: 2.1.1
+name: Transmute
+description: "Self-hosted file converter supporting 3000+ conversions"
+min_os_version: 1.5.0
+author: transmute-app
+license: MIT
+homepage: https://github.com/transmute-app/transmute
+locales:
+  zh:
+    name: "Transmute"
+    description: "自托管文件转换与压缩工具：图片、视频、音频、JSON、Excel 等 3000+ 格式转换，本地处理保护隐私"
+  en:
+    name: "Transmute"
+    description: "Self hosted file converter and compression tool for images, video, audio, json, excel and more. Supports over 3,000 conversions"

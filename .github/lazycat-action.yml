@@ -1,0 +1,39 @@
+version: 1
+
+project:
+  root: .
+  build_config: lzc-build.yml
+  package_file: package.yml
+  output: dist/transmute.lpk
+  target_arch: amd64
+
+update:
+  strategy: publish
+  allow_downgrade: false
+  version_source:
+    type: image
+    image: transmute
+
+build:
+  run_buildscript: false
+
+images:
+  - id: transmute
+    target: service
+    service: transmute
+    source: ghcr.io/transmute-app/transmute
+    channel: stable
+    sort: semver
+    tag_regex: '^v?\d+\.\d+\.\d+$'
+    delivery:
+      mode: mirror
+      require_digest_match: true
+
+stores:
+  official:
+    enabled: false
+  private:
+    enabled: true
+    skip_if_version_exists: true
+    name: Transmute
+    summary: "自托管文件转换与压缩工具（3000+ 格式）"
